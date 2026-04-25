@@ -10,9 +10,9 @@ from openclaw_client import OpenClawClient
 # ==========================================
 # ⚙️ 配置区域
 # ==========================================
-XIAOZHI_WS_URL = "wss://api.xiaozhi.me/mcp/?token=eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIyMjY5OCwiYWdlbnRJZCI6MTYxNTk3MiwiZW5kcG9pbnRJZCI6ImFnZW50XzE2MTU5NzIiLCJwdXJwb3NlIjoibWNwLWVuZHBvaW50IiwiaWF0IjoxNzc0NzA3NzEyLCJleHAiOjE4MDYyNjUzMTJ9.PXLOtgB9vp0rZDAVDIEG9CBLA3EKzwaAd23s7oqQ02IsUfMcEeVAYIBsLktjfhC012d7LQisz2I4_v-Y4L3d0w"  # ⚠️ 填入你的小智接入点
-GATEWAY_URL = "http://47.112.18.149:13090"
-API_TOKEN = "4795849d32b1f6711e87b5440a517c46"
+XIAOZHI_WS_URL = os.getenv("XIAOZHI_WS_URL")
+GATEWAY_URL = os.getenv("GATEWAY_URL", "") # 后面可以跟一个备用值
+API_TOKEN = os.getenv("API_TOKEN", "")
 
 # 初始化客户端
 client = OpenClawClient(
